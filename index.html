@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+  <head>
+    <title>Homepage</title>
+    <!-- JQuery -->
+    <script data-require="jquery@*" data-semver="3.0.0" src="./assets/js/jquery.js"></script>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <script src="./assets/js/bootstrap.min.js"></script>
+    
+    <!-- AngularJS -->
+    <script src="./assets/js/angular.min.js"></script>
+    <script src="./assets/js/angular-route.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    
+    <!-- Apps -->
+    <script src="./app/app.js"></script>
+    <script src="./app/controllers/MainController.js"></script>
+    <script src="./app/controllers/UserController.js"></script>
+    <script src="./app/controllers/RepoController.js"></script>
+    <script src="./app/services/github-service.js"></script>
+
+  </head>
+
+  <body class="container">
+    <div class="text-center">
+      <h2 style="margin-top: 30px;">GitHub Viewer Application</h2>
+    </div>
+    
+    <div ng-view=""></div>
+  </body>
+
+</html>

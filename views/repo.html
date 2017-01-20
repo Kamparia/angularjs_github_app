@@ -1,0 +1,12 @@
+<h4>Repository: {{repo.name}}</h4>
+<div>
+    Issues Count: {{repo.open_issues_count}} Issues(s)<br>
+    Subscribers Count: {{repo.open_issues_count}} Subscriber(s)<br>
+    Privacy: {{repo.private}}<br>
+    Description: {{repo.description}}<br>
+    <a href="{{ repo.html_url }}" target="_blank">Open Repo</a>
+</div>
+
+<br>
+<a href="#/main">Back to search</a>
+<a href="#/user/{{repo.owner.login}}">Back to {{repo.owner.login}}</a>
