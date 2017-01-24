@@ -1,5 +1,6 @@
 <div ng-show="user">
   <hr>
+<<<<<<< HEAD
   
   <div class="row">
     <div class="col-sm-4">
@@ -14,12 +15,25 @@
       <p>Profile: <a href="{{ user.html_url }}" target="_blank">Click here</a></p>    
     </div>    
   </div>
+=======
+  <h3>User: {{ user.name }}</h3>
+  <img ng-src="{{ user.avatar_url }}" class="img img-thumbnail" style="width: 250px;">
+  <br>
+  <p>E-mail Address: {{ user.email }}</p>
+  <p>Organisation: {{ user.company }}</p>
+  <p>Biography: {{ user.bio }}</p>
+  <p>Profile: <a href="{{ user.html_url}}" target="_blank">Click here</a></p>
+>>>>>>> origin/master
 </div>
 
 <div ng-show="user">
   <hr>
   <h4>List of repositories</h4>   
+<<<<<<< HEAD
   <div class="row" style="margin-bottom: 15px;">
+=======
+  <div class="row">
+>>>>>>> origin/master
     <div class="col-xs-6">
        <select class="form-control" ng-model="repoSortOrder" placeholder="Sort Order">
          <option value="+name" selected>Name</option>
@@ -36,8 +50,12 @@
   <table class="table table-bordered">
     <thead>
       <tr>
+<<<<<<< HEAD
         <th>Repo</th>
         <th>Description</th>        
+=======
+        <th>Name</th>
+>>>>>>> origin/master
         <th>Stars</th>
         <th>Language</th>
       </tr>
@@ -48,11 +66,18 @@
       -->
       <tr ng-repeat="repo in repos | orderBy:repoSortOrder | filter : searchrepo">
         <td>
+<<<<<<< HEAD
           <a href="{{repo.html_url}}" target="_blank">
             {{repo.name}}
           </a>
         </td>
         <td>{{repo.description}}</td>
+=======
+          <a href="#/repo/{{user.login}}/{{repo.name}}">
+            {{repo.name}}
+          </a>
+        </td>
+>>>>>>> origin/master
         <td>{{repo.stargazers_count | number}}</td>
         <td>{{repo.language}}</td>
       </tr>
