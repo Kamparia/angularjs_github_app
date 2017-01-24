@@ -1,0 +1,61 @@
+<div ng-show="user">
+  <hr>
+  
+  <div class="row">
+    <div class="col-sm-4">
+      <img ng-src="{{ user.avatar_url }}" class="img img-thumbnail">    
+    </div>
+    <div class="col-sm-8">
+      <h3>{{ user.name }}</h3>  
+      <p>E-mail: {{ user.email }}</p>
+      <p>Organisation: {{ user.company }}</p>
+      <p>Biography: {{ user.bio }}</p>
+      <p>Location: {{ user.location }}</p>
+      <p>Profile: <a href="{{ user.html_url }}" target="_blank">Click here</a></p>    
+    </div>    
+  </div>
+</div>
+
+<div ng-show="user">
+  <hr>
+  <h4>List of repositories</h4>   
+  <div class="row" style="margin-bottom: 15px;">
+    <div class="col-xs-6">
+       <select class="form-control" ng-model="repoSortOrder" placeholder="Sort Order">
+         <option value="+name" selected>Name</option>
+         <option value="-stargazers_count">Stars</option>
+         <option value="+language">Language</option>
+       </select>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-group">
+        <input class="form-control pull-right" ng-model="searchrepo" placeholder="Search Repos" required />            
+      </div>
+    </div>        
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Repo</th>
+        <th>Description</th>        
+        <th>Stars</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--
+      <tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">
+      -->
+      <tr ng-repeat="repo in repos | orderBy:repoSortOrder | filter : searchrepo">
+        <td>
+          <a href="{{repo.html_url}}" target="_blank">
+            {{repo.name}}
+          </a>
+        </td>
+        <td>{{repo.description}}</td>
+        <td>{{repo.stargazers_count | number}}</td>
+        <td>{{repo.language}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
